@@ -1,5 +1,9 @@
 # SR-FLIPFLOP-USING-CASE
 
+NAME:P.VIGNESHWARAN
+
+REF NO:24900068
+
 **AIM:**
 
 To implement  SR flipflop using verilog and validating their functionality using their functional tables
@@ -39,10 +43,46 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+
+module sr_ff(s,r,clk,q,qbar);
+
+input s,r,clk;
+
+output reg q;
+
+output reg qbar;
+
+initial 
+
+begin
+
+q=0;
+
+qbar=1;
+
+end
+
+always @(posedge clk)
+
+begin
+
+   q=s|(~r&q);
+   
+   qbar=r|(~s&~q);
+   
+end
+
+endmodule
+
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
+![ex-6 1](https://github.com/user-attachments/assets/eb45885f-7bce-46fc-bbea-39253f36ecb2)
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![ex-6 2](https://github.com/user-attachments/assets/3ea1b298-4ac7-4728-897a-c90b4520b4be)
+
 
 **RESULTS**
+Thus program is verified successfully.
